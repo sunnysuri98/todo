@@ -18,9 +18,9 @@ A simple and efficient command-line interface (CLI) application for managing you
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/todo.git
+    https://github.com/sunnysuri98/todo.git
     cd todo-app
-    ```
+    ``` 
 
 2. Build the project:
     ```sh
