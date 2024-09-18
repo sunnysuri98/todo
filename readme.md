@@ -9,7 +9,7 @@ A simple and efficient command-line interface (CLI) application for managing you
 - Mark tasks as done
 
 ## Installation
-p
+
 ### Prerequisites
 
 - Rust (Make sure you have Rust installed)
@@ -51,7 +51,7 @@ todo done "Buy groceries"
 ```
 ### Show Tasks
 
-To show all tasks:
+To show all task:
 ```sh
 todo show
 
