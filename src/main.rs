@@ -2,7 +2,7 @@ mod db;
 
 use clap::{Parser, Subcommand};
 
-use db::{add_task, init_database, show_tasks,done_task};
+use db::{add_task, done_task, init_database, show_tasks};
 
 #[derive(Parser)]
 struct Cli {
@@ -16,7 +16,7 @@ enum Commands {
 
     Show {},
 
-    Done { task: String},
+    Done { task: String },
 }
 
 fn main() {
@@ -26,17 +26,24 @@ fn main() {
     match args.command {
         Commands::Add { task } => {
             let task = lowercase(task);
-
-            add_task(&conn, task).unwrap();
+            if !task.trim().is_empty() {
+                add_task(&conn, task).unwrap();
+            } else {
+                println!("Task cannot be empty!!")
+            }
         }
 
         Commands::Show {} => {
             show_tasks(&conn).unwrap();
         }
 
-        Commands::Done { task }=>{
+        Commands::Done { task } => {
             let task = lowercase(task);
-            done_task(&conn,task).unwrap();
+            if !task.trim().is_empty() {
+                done_task(&conn, task).unwrap();
+            } else{
+                println!("Task cannot be empty");
+            }
         }
     }
 }

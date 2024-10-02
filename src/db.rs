@@ -25,7 +25,7 @@ pub fn add_task(conn: &Connection, task: String) -> Result<(), rusqlite::Error> 
         )?;
         println!("Task {} added in todo list",task);
     } else {
-        println!("Task already exists in database!!")
+        println!("Task already exist in list!!")
     }
 
     Ok(())
